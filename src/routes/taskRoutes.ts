@@ -5,3 +5,5 @@ const router = Router();
 
 router
   .get('/tasks', listTasks)
+
+export default router;

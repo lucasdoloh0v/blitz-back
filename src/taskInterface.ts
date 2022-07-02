@@ -1,9 +1,9 @@
-interface ITask {
+export interface ITask {
   name: string,
   status: string,
 }
 
-interface ITaskOnDB extends ITask {
+export interface ITaskOnDB extends ITask {
   id: number,
   createdAt: string
 }

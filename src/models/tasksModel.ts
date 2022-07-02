@@ -1,3 +1,4 @@
+import { ITask, ITaskOnDB } from "../taskInterface";
 import connection from "./connection"
 
 export const getAll = async (): Promise<ITaskOnDB[]> => {
