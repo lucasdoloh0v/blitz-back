@@ -1,0 +1,1 @@
+Para subir o banco de dados utilizado na aplicação bastar utilizar o arquivo Ebyrt.sql que contem a query de criação e população do banco de dados
