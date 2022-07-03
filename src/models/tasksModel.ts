@@ -20,6 +20,6 @@ export const remove = async (id: number) => {
   await connection.execute('DELETE FROM Ebyrt.Tasks WHERE id=?', [id]);
 }
 
-export const updateTask = async (id: number, taks: ITask) => {
-  
+export const update = async (id: number, taks: ITask) => {
+  await connection.execute('UPDATE Ebyrt.Tasks SET name=?, status=? WHERE id=?', [taks.name, taks.status, id]);
 }
