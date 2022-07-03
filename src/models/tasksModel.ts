@@ -1,3 +1,4 @@
+import { ResultSetHeader } from "mysql2";
 import { ITask, ITaskOnDB } from "../taskInterface";
 import connection from "./connection"
 
@@ -8,8 +9,11 @@ export const getAll = async (): Promise<ITaskOnDB[]> => {
   return result as ITaskOnDB[];
 }
 
-export const createTask = async (task: ITask) => {
-  
+export const create = async (task: ITask, date: string): Promise<number> => {
+  const [{ insertId }] = await connection.execute<ResultSetHeader>(`INSERT INTO Ebyrt.Tasks (name, status, created_at)
+    VALUES (?, ?, ?)`, [task.name, task.status, date]);
+
+  return insertId;
 }
 
 export const removeTask = async (id: number) => {
