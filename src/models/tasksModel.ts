@@ -16,8 +16,8 @@ export const create = async (task: ITask, date: string): Promise<number> => {
   return insertId;
 }
 
-export const removeTask = async (id: number) => {
-  
+export const remove = async (id: number) => {
+  await connection.execute('DELETE FROM Ebyrt.Tasks WHERE id=?', [id]);
 }
 
 export const updateTask = async (id: number, taks: ITask) => {
